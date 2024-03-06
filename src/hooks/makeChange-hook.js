@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const bankNotes = [5, 10, 20, 50, 100];
-const coins = [0.01, 0.05, 0.1, 0.25, 1, 2];
+const bankNotes = [500, 1000, 2000, 5000, 10000];
+const coins = [1, 5, 10, 25, 100, 200];
 
 function useMakeChange() {
   const [change, setChange] = useState(null);
@@ -12,7 +12,16 @@ function useMakeChange() {
     let tCoins = {};
     let total = 0;
 
-    let cent = amount.toString().split('.')[1] % 10;
+    amount = amount * 100;
+
+    let cent = amount % 10;
+
+    // Rounding cents
+    if (cent >= 3 && cent < 8) {
+      amount = Math.floor(amount / 10) * 10 + 5;
+    } else if (cent >= 8) {
+      amount = (Math.floor(amount / 10) + 1) * 10;
+    }
 
     // Rounding cents
     if (cent >= 3 && cent < 8) {

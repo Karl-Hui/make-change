@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AmountInput from './AmountInput';
 import ChangeResult from './ChangeResult';
 import useMakeChange from './hooks/makeChange-hook';

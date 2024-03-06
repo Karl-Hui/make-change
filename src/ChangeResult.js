@@ -7,11 +7,11 @@ const ChangeResult = ({ change }) => {
       <h2>Change:</h2>
       <div>
         <h3>Total 共需要找:</h3>
-        {`$${change.total}`}
+        {`$${change.total / 100}`}
         <h3>Bank Notes 紙幣:</h3>
         <ul>
           {Object.entries(change.tBankNotes).map(([bankNote, count]) => (
-            <li key={bankNote}>{`$${bankNote} x ${count}`}</li>
+            <li key={bankNote}>{`$${bankNote / 100} x ${count}`}</li>
           ))}
         </ul>
       </div>
@@ -19,7 +19,7 @@ const ChangeResult = ({ change }) => {
         <h3>Coins 硬幣:</h3>
         <ul>
           {Object.entries(change.tCoins).map(([coin, count]) => (
-            <li key={coin}>{`$${coin} x ${count}`}</li>
+            <li key={coin}>{`$${coin / 100} x ${count}`}</li>
           ))}
         </ul>
       </div>
