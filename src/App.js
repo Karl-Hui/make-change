@@ -9,6 +9,7 @@ const App = () => {
   return (
     <div>
       <h1>Money Change App</h1>
+      <p>v1.1</p>
       <AmountInput onSubmit={calculateChange} />
       {change && <ChangeResult change={change} />}
     </div>
