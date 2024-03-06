@@ -6,18 +6,20 @@ const ChangeResult = ({ change }) => {
     <div>
       <h2>Change:</h2>
       <div>
-        <h3>Bank Notes:</h3>
+        <h3>Total 共需要找:</h3>
+        {`$${change.total}`}
+        <h3>Bank Notes 紙幣:</h3>
         <ul>
-          {Object.entries(change.紙幣).map(([note, count]) => (
-            <li key={note}>{`${count} x $${note}`}</li>
+          {Object.entries(change.tBankNotes).map(([bankNote, count]) => (
+            <li key={bankNote}>{`$${bankNote} x ${count}`}</li>
           ))}
         </ul>
       </div>
       <div>
-        <h3>Coins:</h3>
+        <h3>Coins 硬幣:</h3>
         <ul>
-          {Object.entries(change.硬幣).map(([coin, count]) => (
-            <li key={coin}>{`${count} x $${coin}`}</li>
+          {Object.entries(change.tCoins).map(([coin, count]) => (
+            <li key={coin}>{`$${coin} x ${count}`}</li>
           ))}
         </ul>
       </div>

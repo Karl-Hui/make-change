@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import AmountInput from './AmountInput';
 import ChangeResult from './ChangeResult';
-import makeChange from './makeChange'; // Import the makeChange function
+import useMakeChange from './hooks/makeChange-hook';
 
 const App = () => {
-  const [change, setChange] = useState(null);
-
-  const calculateChange = (amount) => {
-    const newChange = makeChange(amount);
-    setChange(newChange);
-  };
+  const { change, calculateChange } = useMakeChange();
 
   return (
     <div>
