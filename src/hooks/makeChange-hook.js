@@ -17,18 +17,20 @@ function useMakeChange() {
     let cent = amount % 10;
 
     // Rounding cents
-    if (cent >= 3 && cent < 8) {
+    if (cent < 3) {
+      amount = Math.floor(amount / 10) * 10;
+    } else if (cent >= 3 && cent < 8) {
       amount = Math.floor(amount / 10) * 10 + 5;
     } else if (cent >= 8) {
       amount = (Math.floor(amount / 10) + 1) * 10;
     }
 
-    // Rounding cents
-    if (cent >= 3 && cent < 8) {
-      amount = Math.floor(amount * 10) / 10 + 0.05;
-    } else if (cent >= 8) {
-      amount = Math.floor(amount * 10) / 10 + 0.1;
-    }
+    // // Rounding cents
+    // if (cent >= 3 && cent < 8) {
+    //   amount = Math.floor(amount * 10) / 10 + 0.05;
+    // } else if (cent >= 8) {
+    //   amount = Math.floor(amount * 10) / 10 + 0.1;
+    // }
 
     for (let i = bankNotes.length - 1; i >= 0; i--) {
       if (total >= amount) break;

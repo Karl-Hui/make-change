@@ -1,0 +1,26 @@
+.cusInput {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 24px;
+    -webkit-appearance: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.cusInput::-webkit-outer-spin-button,
+.cusInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.changesLabel {
+ cursor: pointer;
+}
